@@ -22,5 +22,9 @@
     - fetch the /auth/signup api
   # Install cors in backend
     - use { withCredentials :true } while calling api
-  
+  # Used  { Eye, EyeOff,Loader2 } from "lucide-react";
+    
+    - Created Signup API using cors
+   # Created Login API and Loader feature to this
+
      

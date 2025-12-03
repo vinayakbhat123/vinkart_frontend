@@ -12,14 +12,14 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@radix-ui/react-label";
-import { Eye, EyeOff } from "lucide-react";
+import { Eye, EyeOff, Loader2 } from "lucide-react";
 import axios from "axios";
 import { BASE_URL } from "@/utils/constant";
 import { toast } from "sonner";
 
 const Login = () => {
    const [showpassword, setshowpassword] = useState(false);
-  const [loading, setloading] = useState(false);
+  const [isloading, setloading] = useState(false);
   const navigate = useNavigate()
   const [formdata, setformdata] = useState({
     emailId: "",
@@ -35,6 +35,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
+      setloading(true)
       const res = await axios.post(BASE_URL+"/auth/login",
         formdata,
         {withCredentials:true,
@@ -47,6 +48,8 @@ const Login = () => {
     } catch (error) {
       toast.error(error?.response?.data?.message)
       console.error(error.message)
+    }finally{
+      setloading(false)
     }
   };
 
@@ -54,7 +57,7 @@ const Login = () => {
     <div className="flex justify-center items-center min-h-screen bg-pink-100">
       <Card className="w-full max-w-sm">
         <CardHeader>
-          <CardTitle className={"flex justify-center font-bold"}>Login</CardTitle>
+          <CardTitle className={"flex justify-center font-bold text-2xl"}>Login</CardTitle>
           <CardDescription>
             Enter your details to login to your account
           </CardDescription>
@@ -107,8 +110,8 @@ const Login = () => {
               </div>
             </div>
             <div className="pt-5">
-              <Button type="submit" className="w-full cursor-pointer">
-                Login
+              <Button type="submit" className="w-full cursor-pointer bg-red-600 hover:bg-red-500">
+                {isloading ? <><Loader2 className="h-4 w-4 animate-spin mr-2 "/></>:"Login"}
               </Button>
             </div>
           </form>
@@ -118,7 +121,7 @@ const Login = () => {
             Don't have any account {" "}
             <Link
               to={"/auth/signup"}
-              className="hover:underline cursor-pointer text-pink-500"
+              className="hover:underline cursor-pointer text-pink-500 hover:text-pink-600"
             >
               SignUp
             </Link>
