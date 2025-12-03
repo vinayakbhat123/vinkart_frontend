@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import {
   Card,
   CardAction,
@@ -20,10 +20,11 @@ import { toast } from "sonner";
 const Signup = () => {
   const [showpassword, setshowpassword] = useState(false);
   const [loading, setloading] = useState(false);
+  const navigate = useNavigate()
   const [formdata, setformdata] = useState({
     firstName: "",
     lastName: "",
-    email: "",
+    emailId: "",
     password: "",
   });
   const handleChange = (e) => {
@@ -34,17 +35,19 @@ const Signup = () => {
     }));
   };
   const handleSubmit = async (e) => {
+    e.preventDefault()
     try {
-      e.preventDefault();
       const res = await axios.post(BASE_URL+"/auth/signup",
-        formdata,{withCredentials:true});
-      if(res.data.success){
-        toast.success(res.data.message)
-        console.log(res);
-      }
-      
+        formdata,
+        {withCredentials:true,
+           headers: {
+         "Content-Type": "application/json",
+       },
+        });
+      toast.success(res?.data?.message)
+      return navigate("/auth/login")
     } catch (error) {
-      console.log(error)
+      toast.error(error?.response?.data)
     }
   };
   return (
@@ -89,13 +92,13 @@ const Signup = () => {
               <div className="grid gap-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
-                  id="email"
+                  id="emailId"
                   type="email"
-                  name= "email"
-                  autoComplete="current-email"
+                  name= "emailId"
+                  autoComplete="current-emailId"
                   placeholder="m@example.com"
                   required
-                  value={formdata.email}
+                  value={formdata.emailId}
                   onChange={handleChange}
                 />
               </div>
