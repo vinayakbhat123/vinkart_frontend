@@ -4,11 +4,12 @@ import Home from "./pages/Home";
 import Navbar from "./components/ui/Navbar";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Footer from "./components/Footer";
 
 const router = createBrowserRouter([
   {
     path:"/",
-    element:<><Navbar/><Home/></>
+    element:<><Navbar/><Home/><Footer/></>
   },
   {
     path:"/auth/login",

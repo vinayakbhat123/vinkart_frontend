@@ -27,4 +27,6 @@
   - Created Signup API using cors
   - Created Login API and Loader feature to this
   -  created navbar and Hero section
+  # Install react-icons/fa
+    - npm i react-icons --save
      

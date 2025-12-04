@@ -14,10 +14,6 @@ const Hero = () => {
               Discover cutting-edge technology with unbeatable deals on
               smartphones, laptops, and more
             </p>
-          </div>
-          <div className="relative">
-            <img src="/iphone1.png" alt="iphone-photo" width={500} height={400} className="rounded-lg shadow-2xl" />
-          </div>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button className="bg-white text-blue-500 hover:bg-gray-100">
               Shop Now
@@ -29,6 +25,10 @@ const Hero = () => {
             >
               View Deals
             </Button>
+            </div>
+          </div>
+          <div className="relative">
+            <img src="/newiphone.png" alt="iphone-photo" width={500} height={400} className="rounded-lg shadow-2xl pt-5 " />
           </div>
         </div>
       </div>
