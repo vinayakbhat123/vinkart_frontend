@@ -16,9 +16,12 @@ import { Eye, EyeOff, Loader2 } from "lucide-react";
 import axios from "axios";
 import { BASE_URL } from "@/utils/constant";
 import { toast } from "sonner";
+import { useDispatch } from "react-redux";
+import { addUser } from "@/Redux/userSlice";
 
 const Login = () => {
-   const [showpassword, setshowpassword] = useState(false);
+  const dispatch = useDispatch()
+  const [showpassword, setshowpassword] = useState(false);
   const [isloading, setloading] = useState(false);
   const navigate = useNavigate()
   const [formdata, setformdata] = useState({
@@ -43,7 +46,9 @@ const Login = () => {
          "Content-Type": "application/json",
        },
         });
+      console.log(res?.data)
       toast.success(res?.data?.message)
+      dispatch(addUser(res?.data?.saveduser))
       return navigate("/")
     } catch (error) {
       toast.error(error?.response?.data?.message)

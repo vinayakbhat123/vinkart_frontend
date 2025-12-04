@@ -1,0 +1,100 @@
+<svg viewBox="0 0 500 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient Definitions -->
+  <defs>
+    <linearGradient id="cartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="500" height="150" fill="#ffffff"/>
+  
+  <!-- Modern Icon Container -->
+  <g transform="translate(40, 35)">
+    <!-- Circular background with gradient -->
+    <circle cx="35" cy="35" r="38" fill="url(#cartGradient)" opacity="0.1"/>
+    <circle cx="35" cy="35" r="35" fill="none" stroke="url(#cartGradient)" stroke-width="2" opacity="0.3"/>
+    
+    <!-- Stylized V + Cart combination -->
+    <g transform="translate(35, 35)">
+      <!-- V shape that forms cart -->
+      <path d="M -15 -18 L -15 -12 L 0 10 L 15 -12 L 15 -18 L 0 5 Z" 
+            fill="url(#cartGradient)" 
+            filter="url(#shadow)"/>
+      
+      <!-- Cart handle -->
+      <path d="M -18 -15 Q -18 -22 -12 -22 L 12 -22 Q 18 -22 18 -15" 
+            fill="none" 
+            stroke="url(#cartGradient)" 
+            stroke-width="2.5" 
+            stroke-linecap="round"/>
+      
+      <!-- Cart wheels -->
+      <circle cx="-8" cy="18" r="3" fill="url(#cartGradient)"/>
+      <circle cx="8" cy="18" r="3" fill="url(#cartGradient)"/>
+      
+      <!-- Sparkle effect -->
+      <circle cx="18" cy="-18" r="2" fill="#8B5CF6" opacity="0.8"/>
+      <circle cx="22" cy="-10" r="1.5" fill="#6366F1" opacity="0.6"/>
+    </g>
+  </g>
+  
+  <!-- Brand Name -->
+  <g transform="translate(130, 50)">
+    <!-- VINKART with modern font styling -->
+    <text x="0" y="35" 
+          font-family="'Segoe UI', 'Arial Black', sans-serif" 
+          font-size="56" 
+          font-weight="800" 
+          fill="#1F2937" 
+          letter-spacing="-1">
+      VINKART
+    </text>
+    
+    <!-- Gradient overlay on KAR -->
+    <text x="0" y="35" 
+          font-family="'Segoe UI', 'Arial Black', sans-serif" 
+          font-size="56" 
+          font-weight="800" 
+          fill="url(#textGradient)" 
+          letter-spacing="-1">
+      VIN<tspan fill="url(#textGradient)">KART</tspan>
+    </text>
+    
+    <!-- Premium tagline with better spacing -->
+    <text x="2" y="55" 
+          font-family="'Segoe UI', Arial, sans-serif" 
+          font-size="13" 
+          font-weight="500" 
+          fill="#6B7280" 
+          letter-spacing="3">
+      YOUR PREMIUM MARKETPLACE
+    </text>
+  </g>
+  
+  <!-- Decorative elements -->
+  <!-- Small dots pattern -->
+  <circle cx="420" cy="60" r="3" fill="#6366F1" opacity="0.3"/>
+  <circle cx="435" cy="65" r="2" fill="#8B5CF6" opacity="0.4"/>
+  <circle cx="445" cy="55" r="2.5" fill="#6366F1" opacity="0.25"/>
+  
+  <!-- Quality badge -->
+  <g transform="translate(410, 85)">
+    <path d="M 0 0 L 8 0 L 10 3 L 8 6 L 0 6 L 2 3 Z" 
+          fill="none" 
+          stroke="#8B5CF6" 
+          stroke-width="1.5" 
+          opacity="0.4"/>
+    <circle cx="5" cy="3" r="1.5" fill="#8B5CF6" opacity="0.5"/>
+  </g>
+</svg>

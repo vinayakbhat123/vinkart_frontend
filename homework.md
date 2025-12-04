@@ -29,4 +29,11 @@
   -  created navbar and Hero section
   # Install react-icons/fa
     - npm i react-icons --save
-     
+  - created footer page
+  # Install react reduxjs/toolkit
+     - npm install @reduxjs/toolkit
+     - npm install react-redux
+        - create a store
+        - create a userSlice
+        - provider to main.jsx
+  

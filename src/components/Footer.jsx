@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import {FaFacebook,FaInstagram,FaLinkedin,FaGithub} from "react-icons/fa"
-import { Button } from './ui/button'
 
 const Footer = () => {
   return (
@@ -10,7 +9,7 @@ const Footer = () => {
         {/* info */}
         <div className='mb-6 md:mb-0'>
           <Link to={"/"}>
-          <img src="/newiphone.png" alt="" className='w-32'/>
+          <img src="/vinkartsvg.png" alt="" className='w-32'/>
           </Link>
           <p className='mt-2 text-sm'>Powering Your world the Bset in Eletronics.</p>
           <p className='mt-2 text-sm'>123 Bangalore.</p>
@@ -46,9 +45,9 @@ const Footer = () => {
 
             <input type="email" 
             placeholder='Your Email address'
-            className='w-full p-2 bg-white text-gray-800 rounded-lg focus:outline-none focus:ring-2'/>
+            className='w-full p-2 bg-white text-gray-800 rounded-sm focus:outline-none focus:ring-2'/>
 
-            <Button className={"bg-pink-600 text-white px-4 hover:bg-red-700"}>Subsribe</Button>
+            <button type='submit' className="bg-red-600 rounded-r-md text-white px-4 hover:bg-red-700">Subscribe</button>
           </form>
         </div>
       </div>
