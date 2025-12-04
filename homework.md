@@ -24,7 +24,7 @@
     - use { withCredentials :true } while calling api
   # Used  { Eye, EyeOff,Loader2 } from "lucide-react";
     
-    - Created Signup API using cors
-   # Created Login API and Loader feature to this
-
+  - Created Signup API using cors
+  - Created Login API and Loader feature to this
+  -  created navbar and Hero section
      
