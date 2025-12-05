@@ -12,6 +12,7 @@
     - Install label  =>     npx shadcn@latest add label
     - Install input  =>     npx shadcn@latest add input
     - Install sonner =>    npx shadcn@latest add sonner(toast)
+    - Install Tabs   =>   npx shadcn@latest add tabs
   # Install  react router dom
     - npm i react-router-dom
     - created paths for routing
@@ -29,11 +30,13 @@
   -  created navbar and Hero section
   # Install react-icons/fa
     - npm i react-icons --save
-  - created footer page
+   - created footer page
   # Install react reduxjs/toolkit
      - npm install @reduxjs/toolkit
      - npm install react-redux
         - create a store
         - create a userSlice
         - provider to main.jsx
+    - created profile page
+    
   

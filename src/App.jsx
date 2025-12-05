@@ -5,6 +5,7 @@ import Navbar from "./components/ui/Navbar";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Footer from "./components/Footer";
+import Profile from "./components/Profile";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +19,12 @@ const router = createBrowserRouter([
   {
     path:"/auth/signup",
     element:<><Signup/></>
+  },
+   {
+    path:"/auth/profile/:userId",
+    element:<><Navbar/><Profile/></>
   }
+
 ])
 const App = () => {
   return(
