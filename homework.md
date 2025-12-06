@@ -13,6 +13,8 @@
     - Install input  =>     npx shadcn@latest add input
     - Install sonner =>    npx shadcn@latest add sonner(toast)
     - Install Tabs   =>   npx shadcn@latest add tabs
+    - Install select =>  npx shadcn@latest add select 
+    - Insatll skeleton => npx shadcn@latest add skeleton 
   # Install  react router dom
     - npm i react-router-dom
     - created paths for routing
@@ -38,5 +40,9 @@
         - create a userSlice
         - provider to main.jsx
     - created profile page
+  # Creating Products page
+       - created Products page for get products
+       - created productcard page and call a api /getallproducts 
+       - 
     
   

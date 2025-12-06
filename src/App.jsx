@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Footer from "./components/Footer";
 import Profile from "./components/Profile";
+import Products from "./components/Products";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,13 @@ const router = createBrowserRouter([
    {
     path:"/auth/profile/:userId",
     element:<><Navbar/><Profile/></>
+  },
+  
+   {
+    path:"/products",
+    element:<><Navbar/><Products/></>
   }
+
 
 ])
 const App = () => {
