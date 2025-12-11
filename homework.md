@@ -43,6 +43,7 @@
   # Creating Products page
        - created Products page for get products
        - created productcard page and call a api /getallproducts 
-       - 
+       - created filtersidebar 
+   - created productsSlice
     
   
