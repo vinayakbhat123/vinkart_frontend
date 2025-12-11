@@ -35,7 +35,6 @@ const Products = () => {
 
       if (res?.data?.success) {
         setallproducts(res.data.products);
-        setFilterproducts(res.data.products);
         dispatch(setProducts(res.data.products));
         console.log("PRODUCTS:", res.data.products);
       }
