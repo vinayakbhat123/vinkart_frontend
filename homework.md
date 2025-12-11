@@ -45,5 +45,7 @@
        - created productcard page and call a api /getallproducts 
        - created filtersidebar 
    - created productsSlice
+      - setproducts  action
+      - setcart action
     
   
