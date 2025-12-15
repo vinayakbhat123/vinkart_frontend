@@ -15,6 +15,7 @@
     - Install Tabs   =>   npx shadcn@latest add tabs
     - Install select =>  npx shadcn@latest add select 
     - Insatll skeleton => npx shadcn@latest add skeleton 
+    - Install separator => npx shadcn@latest add separator
   # Install  react router dom
     - npm i react-router-dom
     - created paths for routing
@@ -47,5 +48,11 @@
    - created productsSlice
       - setproducts  action
       - setcart action
-    
-  
+   - products added to cart
+  - created a /cart page 
+     -  post   /addtocart API
+     -  put   /updatecart 
+     - delete /removecartitems
+  - creating Admin dashboard
+     - created Dashboard page
+     - created adminsales page 

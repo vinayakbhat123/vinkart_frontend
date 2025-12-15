@@ -10,7 +10,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { BASE_URL } from "@/utils/constant";
-import { toast } from "sonner";
 import axios from "axios";
 import ProductCard from "./ProductCard";
 import { useDispatch, useSelector } from "react-redux";
@@ -36,7 +35,6 @@ const Products = () => {
       if (res?.data?.success) {
         setallproducts(res.data.products);
         dispatch(setProducts(res.data.products));
-        console.log("PRODUCTS:", res.data.products);
       }
     } catch (error) {
       console.error("ERROR:", error);

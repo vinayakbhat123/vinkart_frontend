@@ -12,8 +12,10 @@ import { useEffect } from "react";
 
 const Navbar = () => {
   const user = useSelector((store) => store.user);
+  const {cart} = useSelector((store) => store.product)
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const admin = user?.role === "admin" ? true : false
 
   const getUser = async () => {
     try {
@@ -87,13 +89,20 @@ const Navbar = () => {
             </Link>
             {user && (
               <Link to={`/auth/profile/${user._id}`}>
-                <li>User {user ? user.firstName : "Name"} </li>
+                <li> {user ? user.firstName : "Name"} </li>
               </Link>
             )}
+  
+             {admin && (
+              <Link to={`/dashboard`}>
+                <li>Dashboard</li>
+              </Link>
+            )}         
+
             <Link to={"/cart"} className="relative">
               <ShoppingCart />
               <span className="bg-pink-500 rounded-full absolute text-white -top-3 -right-5 px-2">
-                0
+                {cart?.items?.length || 0}
               </span>
             </Link>
             {user ? (
