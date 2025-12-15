@@ -1,13 +1,19 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./pages/Home";
+
 import Navbar from "./components/ui/Navbar";
+import Footer from "./components/Footer";
+import AdminAuth from "./components/AdminAuth";
+
+// Public pages
+import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import Footer from "./components/Footer";
-import Profile from "./components/Profile";
 import Products from "./components/Products";
 import Cart from "./components/Cart";
+import Profile from "./components/Profile";
+
+// Admin pages
 import Dashboard from "./pages/Admin/Dashboard";
 import AdminSales from "./pages/Admin/AdminSales";
 import Addproduct from "./pages/Admin/Addproduct";
@@ -16,9 +22,10 @@ import AdminOrders from "./pages/Admin/AdminOrders";
 import Showusersorders from "./pages/Admin/Showusersorders";
 import AdminUsers from "./pages/Admin/AdminUsers";
 import AdminUserInfo from "./pages/Admin/AdminUserInfo";
-import AdminAuth from "./components/AdminAuth";
+import SingleProduct from "./components/SingleProduct";
 
 const router = createBrowserRouter([
+  // ================= PUBLIC ROUTES =================
   {
     path: "/",
     element: (
@@ -31,19 +38,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/auth/login",
-    element: (
-      <>
-        <Login />
-      </>
-    ),
+    element: <Login />,
   },
   {
     path: "/auth/signup",
-    element: (
-      <>
-        <Signup />
-      </>
-    ),
+    element: <Signup />,
   },
   {
     path: "/auth/profile/:userId",
@@ -55,11 +54,11 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/products",
+    path: "/products/:id",
     element: (
       <>
         <Navbar />
-        <Products />
+        <SingleProduct/>
       </>
     ),
   },
@@ -72,72 +71,42 @@ const router = createBrowserRouter([
       </>
     ),
   },
+
+  // ================= ADMIN ROUTES =================
   {
-    element: <AdminAuth />,
+    element: <AdminAuth />, // 🔐 admin guard
     children: [
       {
         path: "/dashboard",
-        element: (
-          <>
-            <Dashboard />
-          </>
-        ),
+        element: <Dashboard />,
         children: [
           {
-            path: "sales", // relative path
-            element: (
-              <>
-                <AdminSales />
-              </>
-            ),
+            path: "sales",
+            element: <AdminSales />,
           },
           {
-            path: "add-products", // relative path
-            element: (
-              <>
-                <Addproduct />
-              </>
-            ),
+            path: "add-products",
+            element: <Addproduct />,
           },
           {
-            path: "admin-products", // relative path
-            element: (
-              <>
-                <Adminproducts />
-              </>
-            ),
+            path: "admin-products",
+            element: <Adminproducts />,
           },
           {
-            path: "admin-orders", // relative path
-            element: (
-              <>
-                <AdminOrders />
-              </>
-            ),
+            path: "admin-orders",
+            element: <AdminOrders />,
           },
           {
-            path: "users/orders/:userId", // relative path
-            element: (
-              <>
-                <Showusersorders />
-              </>
-            ),
+            path: "users/orders/:userId",
+            element: <Showusersorders />,
           },
           {
-            path: "admin-users", // relative path
-            element: (
-              <>
-                <AdminUsers />
-              </>
-            ),
+            path: "admin-users",
+            element: <AdminUsers />,
           },
           {
-            path: "admin/userinfo/:id", // relative path
-            element: (
-              <>
-                <AdminUserInfo />
-              </>
-            ),
+            path: "admin/userinfo/:id",
+            element: <AdminUserInfo />,
           },
         ],
       },
@@ -146,11 +115,7 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;
