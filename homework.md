@@ -16,6 +16,7 @@
     - Install select =>  npx shadcn@latest add select 
     - Insatll skeleton => npx shadcn@latest add skeleton 
     - Install separator => npx shadcn@latest add separator
+    - Insatll breadcrumb =>npx shadcn@latest add breadcrumb 
   # Install  react router dom
     - npm i react-router-dom
     - created paths for routing
@@ -56,3 +57,5 @@
   - creating Admin dashboard
      - created Dashboard page
      - created adminsales page 
+  # Install react-medium-image-zoom
+     - npm i react-medium-image-zoom

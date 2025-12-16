@@ -6,9 +6,11 @@ import { BASE_URL } from "@/utils/constant";
 import { toast } from "sonner";
 import { useDispatch } from "react-redux";
 import { setCart } from "@/Redux/productsSlice";
+import { useNavigate } from "react-router-dom";
 const ProductCard = ({ product }) => {
   const { productName, productPrice, productImg, _id } = product;
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const addToCart = async ({ productId }) => {
     // TODO: Add to cart functionality
     try {
@@ -47,6 +49,7 @@ const ProductCard = ({ product }) => {
         <img
           src={productImg[0]?.url}
           alt={""}
+          onClick={() => navigate(`/products/${_id}`)}
           className="w-full h-full transition-duration-300 hover:scale-105 object-cover"
         />
       </div>

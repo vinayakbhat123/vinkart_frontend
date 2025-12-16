@@ -53,8 +53,18 @@ const router = createBrowserRouter([
       </>
     ),
   },
+  ,
   {
-    path: "/products/:id",
+    path: "/products",
+    element: (
+      <>
+        <Navbar />
+        <Products/>
+      </>
+    ),
+  },
+  {
+    path: "/products/:_id",
     element: (
       <>
         <Navbar />
@@ -78,7 +88,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
-        element: <Dashboard />,
+        element:<><Navbar/> <Dashboard /></>,
         children: [
           {
             path: "sales",
