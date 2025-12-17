@@ -62,3 +62,6 @@
      - created adminsales page 
   # Install react-medium-image-zoom
      - npm i react-medium-image-zoom
+  # created admin pages 
+    - created admin addproducts 
+    - created admin updateproducts
