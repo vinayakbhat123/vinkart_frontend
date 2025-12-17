@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { removeUser } from "@/Redux/userSlice";
 import { addUser } from "@/Redux/userSlice";
 import { useEffect } from "react";
+import { setProducts } from "@/Redux/productsSlice";
 
 const Navbar = () => {
   const user = useSelector((store) => store.user);
@@ -65,10 +66,21 @@ const Navbar = () => {
       console.error("ERROR:", error);
     }
   };
-
+  
+  const getProducts = async () => {
+    try {
+      const res = await axios.get(BASE_URL +"/getallproducts",{withCredentials:true});
+      if(res?.data?.success){
+        dispatch(setProducts(res?.data?.products))
+      }
+    } catch (error) {
+      console.error("ERROR"+error)
+    }
+  }
   useEffect(() => {
     if (!user) {
       getUser();
+      getProducts()
     }
   }, [user]);
   return (

@@ -17,6 +17,9 @@
     - Insatll skeleton => npx shadcn@latest add skeleton 
     - Install separator => npx shadcn@latest add separator
     - Insatll breadcrumb =>npx shadcn@latest add breadcrumb 
+    - Install textarea => npx shadcn@latest add  textarea
+    - install dialog  => npx shadcn@latest add dialog
+    - Install alert -dialog =>  npx shadcn@latest add alert-dialog
   # Install  react router dom
     - npm i react-router-dom
     - created paths for routing
